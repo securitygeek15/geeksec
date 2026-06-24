@@ -12,14 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Python · JavaScript · Linux",
                 "Building tools, breaking stuff",
                 "Infosec since 10th grade",
-                "root@geeksec ~ $ whoami"
+                "root@geeksec ~ $ whoami",
+                "Securing the internet, one bug at a time"
             ];
 
             let phraseIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
+            let isPaused = false;
 
             function type() {
+                if (isPaused) {
+                    setTimeout(type, 100);
+                    return;
+                }
+
                 const current = phrases[phraseIndex];
                 if (isDeleting) {
                     el.textContent = current.substring(0, charIndex - 1);
@@ -29,21 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     charIndex++;
                 }
 
-                let speed = isDeleting ? 40 : 80;
+                let speed = isDeleting ? 30 : 60;
 
                 if (!isDeleting && charIndex === current.length) {
-                    speed = 2000;
-                    isDeleting = true;
+                    speed = 2500;
+                    isPaused = true;
+                    setTimeout(() => {
+                        isPaused = false;
+                        isDeleting = true;
+                        setTimeout(type, 10);
+                    }, speed);
+                    setTimeout(type, speed + 10);
+                    return;
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
                     phraseIndex = (phraseIndex + 1) % phrases.length;
-                    speed = 500;
+                    speed = 400;
                 }
 
                 setTimeout(type, speed);
             }
 
-            type();
+            setTimeout(type, 500);
         }
 
         function initLogoAnimation() {
@@ -52,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             logo.style.display = 'flex';
             logo.style.opacity = '0';
             logo.style.transform = 'translate3d(50px, 20px, 0) rotate(5deg)';
-            logo.style.transition = 'all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            logo.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
             requestAnimationFrame(() => {
                 logo.style.opacity = '1';
                 logo.style.transform = 'translate3d(0, 0, 0) rotate(0deg)';
@@ -60,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         initTypewriter();
-        setTimeout(initLogoAnimation, 300);
+        setTimeout(initLogoAnimation, 400);
     }
 
     initializeAnimations();
