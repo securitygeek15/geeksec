@@ -1,153 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-[#050505] text-gray-300 antialiased;
-  }
-  ::selection {
-    background: rgba(0, 229, 255, 0.15);
-    color: #00e5ff;
-  }
-  html {
-    scroll-behavior: smooth;
+    @apply bg-background text-gray-200 antialiased selection:bg-accent/30 selection:text-accent font-sans;
   }
 }
 
-@layer components {
-  .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400;
-  }
-
-  .section-header {
-    @apply text-center mb-14;
-  }
-  .section-label {
-    @apply text-[11px] tracking-[4px] uppercase font-semibold text-cyan-400/80 mb-3 block;
-  }
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold text-white mb-3;
-  }
-  .section-sub {
-    @apply text-sm text-gray-500;
-  }
-  .section-divider {
-    @apply w-12 h-0.5 mx-auto mb-5 rounded-full;
-    background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-  }
-
-  .project-card {
-    @apply relative bg-[#0a0a0a] border border-white/[0.06] rounded-xl p-7 transition-all duration-500 overflow-hidden;
-  }
-  .project-card:hover {
-    @apply -translate-y-0.5 border-cyan-400/20;
-    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 229, 255, 0.06);
-  }
-  .project-card::before {
-    content: '';
-    @apply absolute top-0 left-0 right-0 h-[1.5px] opacity-0 transition-opacity duration-500;
-    background: linear-gradient(90deg, transparent, #00e5ff, #ff0080, transparent);
-  }
-  .project-card:hover::before {
-    opacity: 1;
-  }
-
-  .tag {
-    @apply inline-flex text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-md border transition-all duration-200;
-  }
-
-  .skill-chip {
-    @apply inline-flex items-center gap-2 bg-white/[0.03] border border-white/[0.06] rounded-lg px-4 py-2 text-sm text-gray-400 transition-all duration-200 cursor-default hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/[0.03];
-  }
-
-  .terminal-window {
-    @apply bg-[#050505] border border-white/[0.06] rounded-xl overflow-hidden;
-  }
-  .terminal-header {
-    @apply bg-white/[0.03] px-4 py-3 flex items-center gap-2 border-b border-white/[0.06];
-  }
-  .terminal-dot {
-    @apply w-2.5 h-2.5 rounded-full;
-  }
-
+@layer utilities {
   .glass-card {
-    @apply bg-white/[0.02] border border-white/[0.06] rounded-2xl backdrop-blur-xl;
+    @apply bg-white/[0.02] border border-white/5 backdrop-blur-md rounded-2xl;
+  }
+  
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:border-accent/30 hover:shadow-[0_0_20px_rgba(34,197,94,0.1)] hover:-translate-y-1;
   }
 
   .grid-bg {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-
-  .social-icon {
-    @apply w-9 h-9 flex items-center justify-center border border-white/[0.06] rounded-lg text-gray-500 transition-all duration-200 hover:border-cyan-400/30 hover:text-cyan-400 hover:bg-cyan-400/[0.04];
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-  }
-  .reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .glitch-text {
-    position: relative;
-    display: inline-block;
-  }
-  .glitch-text::before,
-  .glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .glitch-text:hover::before {
-    opacity: 0.6;
-    color: #ff0080;
-    z-index: -1;
-    animation: glitch-shift 0.25s ease;
-    clip-path: inset(20% 0 60% 0);
-  }
-  .glitch-text:hover::after {
-    opacity: 0.6;
-    color: #00e5ff;
-    z-index: -2;
-    animation: glitch-shift 0.25s ease reverse;
-    clip-path: inset(60% 0 20% 0);
-  }
-  @keyframes glitch-shift {
-    0% { transform: translate(0); }
-    20% { transform: translate(-3px, 1px); }
-    40% { transform: translate(3px, -1px); }
-    60% { transform: translate(-1px, -1px); }
-    80% { transform: translate(1px, 1px); }
-    100% { transform: translate(0); }
-  }
-
-  .typing-cursor::after {
-    content: '|';
-    animation: blink 1s step-end infinite;
-    @apply text-cyan-400 font-light ml-0.5;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  @keyframes floatUp {
-    0% { transform: translateY(100vh) scale(1); opacity: 0; }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.4; }
-    100% { transform: translateY(-10vh) scale(0.5); opacity: 0; }
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
   }
 }
