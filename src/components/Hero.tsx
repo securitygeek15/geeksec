@@ -43,13 +43,13 @@ const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) =
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="min-h-screen relative flex items-center justify-center pt-24 md:pt-20 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-40"></div>
       
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-accent/5 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center z-10 w-full">
         
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -61,16 +61,16 @@ export default function Hero() {
             <span className="text-xs font-medium text-gray-300">Open for opportunities</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
             GeekSec
           </h1>
-          <h2 className="text-2xl md:text-3xl text-gray-400 font-medium mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-400 font-medium mb-6">
             <span className="text-accent">Ethical Hacker</span> <br className="md:hidden" />
             <span className="hidden md:inline"> • </span> 
             Penetration Tester • Bug Bounty Hunter
           </h2>
           
-          <p className="text-gray-400 text-lg mb-8 max-w-xl leading-relaxed">
+          <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
             Building offensive security tools with Python, discovering vulnerabilities through responsible disclosure, and contributing to open-source cybersecurity.
           </p>
 
@@ -93,12 +93,12 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <a href="#projects" className="flex items-center gap-2 bg-accent hover:bg-accent/90 text-background px-6 py-3 rounded-lg font-semibold transition-colors">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="#projects" className="flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-background px-6 py-3 rounded-lg font-semibold transition-colors">
               <FolderCode className="w-5 h-5" />
               View Projects
             </a>
-            <a href="https://github.com/securitygeek15" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+            <a href="https://github.com/securitygeek15" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
               <Github className="w-5 h-5" />
               GitHub
             </a>
@@ -109,7 +109,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative lg:ml-auto w-full max-w-lg"
+          className="relative lg:ml-auto w-full max-w-lg mt-8 lg:mt-0"
         >
           <div className="glass-card overflow-hidden border-accent/20 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
             <div className="bg-white/5 px-4 py-2 border-b border-white/5 flex items-center gap-2">
@@ -118,7 +118,7 @@ export default function Hero() {
               <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
               <span className="text-xs text-gray-500 ml-2 font-mono">bash - 80x24</span>
             </div>
-            <div className="p-5 font-mono text-sm space-y-3">
+            <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm space-y-3 overflow-x-auto whitespace-pre-wrap">
               <div>
                 <span className="text-accent">geeksec@portfolio:~$</span>{' '}
                 <TypewriterText text="whoami" delay={1000} />
@@ -158,7 +158,7 @@ export default function Hero() {
                 transition={{ delay: 3.5 }}
               >
                 <span className="text-accent">geeksec@portfolio:~$</span>{' '}
-                <span className="inline-block w-2.5 h-4 bg-gray-400 animate-pulse align-middle ml-1"></span>
+                <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-gray-400 animate-pulse align-middle ml-1"></span>
               </motion.div>
             </div>
           </div>

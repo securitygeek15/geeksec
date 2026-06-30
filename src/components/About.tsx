@@ -71,7 +71,7 @@ export default function About() {
               <span className="text-xs text-gray-500 ml-2 font-mono">geeksec@portfolio:~$</span>
             </div>
             
-            <div className="p-6 font-mono text-sm space-y-4">
+            <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm space-y-4 overflow-x-auto whitespace-pre-wrap">
               <TerminalLine delay={0.2}>
                 <span className="text-accent">❯</span> cat /etc/passwd | grep geeksec
               </TerminalLine>
@@ -111,7 +111,7 @@ export default function About() {
               </TerminalLine>
 
               <TerminalLine delay={4.5}>
-                <span className="text-accent">❯</span> <span className="inline-block w-2.5 h-4 bg-gray-400 animate-pulse align-middle"></span>
+                <span className="text-accent">❯</span> <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-gray-400 animate-pulse align-middle"></span>
               </TerminalLine>
             </div>
           </motion.div>
