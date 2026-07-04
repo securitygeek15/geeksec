@@ -1,5 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Github = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -35,45 +40,79 @@ const projects = [
 ];
 
 export default function Projects() {
+  const containerRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.project-header', 
+        { y: 60, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1, 
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+          }
+        }
+      );
+
+      gsap.fromTo(cardsRef.current, 
+        { y: 100, opacity: 0, rotationX: -15 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          rotationX: 0,
+          duration: 0.8, 
+          stagger: 0.2, 
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 70%',
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+    <section id="projects" className="py-24 relative" ref={containerRef}>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none blur-3xl opacity-50"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="project-header mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Open Source Work</h2>
           <p className="text-gray-400 text-lg">Security tools I've built and actively maintain.</p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 perspective-1000">
           {projects.map((project, i) => (
             <motion.a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               key={project.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card p-6 md:p-8 glass-card-hover group block relative overflow-hidden"
+              ref={(el) => (cardsRef.current[i] = el)}
+              whileHover={{ scale: 1.02, rotateY: 2, rotateX: -2, z: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="glass-card p-6 md:p-8 group block relative overflow-hidden transform-style-3d cursor-pointer shadow-lg hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] border border-white/5 hover:border-accent/30 transition-colors"
             >
               {/* Subtle gradient glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-colors duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:to-transparent transition-all duration-500"></div>
               
-              <div className="relative z-10 flex flex-col h-full">
+              <div className="relative z-10 flex flex-col h-full transform-style-3d translate-z-10">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                  <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
                     {project.category}
                   </span>
-                  <Github className="w-5 h-5 text-gray-500 group-hover:text-accent transition-colors" />
+                  <Github className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors flex items-center gap-2">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors flex items-center gap-2 drop-shadow-md">
                   {project.name}
                   <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </h3>
@@ -83,8 +122,8 @@ export default function Projects() {
                 </p>
 
                 <div className="flex items-center gap-2 mt-auto">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                  <span className="text-xs text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+                  <span className="text-xs text-gray-500 group-hover:text-gray-300 uppercase tracking-wider font-medium transition-colors">
                     Active Development
                   </span>
                 </div>

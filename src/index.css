@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-gray-200 antialiased selection:bg-accent/30 selection:text-accent font-sans;
+    @apply bg-background text-gray-200 antialiased selection:bg-accent/30 selection:text-accent font-sans overflow-x-hidden;
   }
 }
 

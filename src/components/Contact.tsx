@@ -1,5 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Bug } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Github = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -18,64 +23,123 @@ const Twitter = ({ className }: { className?: string }) => (
 );
 
 export default function Contact() {
-  return (
-    <section id="contact" className="py-24 relative bg-black/40 border-t border-white/5">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Get in Touch</h2>
-          <p className="text-gray-400 text-lg">Let's build something—responsibly.</p>
-        </motion.div>
+  const containerRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-8 md:p-12 relative overflow-hidden"
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.contact-header', 
+        { y: 60, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1, 
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+          }
+        }
+      );
+
+      if (cardRef.current) {
+        gsap.fromTo(cardRef.current,
+          { scale: 0.9, opacity: 0, y: 50 },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'back.out(1.5)',
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: 'top 85%',
+            }
+          }
+        );
+
+        // Stagger inner elements of the card
+        gsap.fromTo(cardRef.current.querySelectorAll('.contact-element'),
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: 'top 80%',
+            }
+          }
+        );
+      }
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="contact" className="py-24 relative bg-black/60 border-t border-white/5 backdrop-blur-md" ref={containerRef}>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="contact-header mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">Get in Touch</h2>
+          <p className="text-gray-400 text-lg">Let's build something—responsibly.</p>
+        </div>
+
+        <div
+          ref={cardRef}
+          className="glass-card p-8 md:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.05)] border-accent/20"
         >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent shadow-[0_0_15px_rgba(34,197,94,0.8)]"></div>
           
-          <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="contact-element text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
             Whether you have a bug bounty program, a penetration testing engagement, an open-source collaboration, or simply want to discuss cybersecurity, I'd be happy to connect.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a 
+          <div className="contact-element flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <motion.a 
+              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34,197,94,0.4)" }}
+              whileTap={{ scale: 0.95 }}
               href="mailto:amaankhan12e4@gmail.com" 
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-background px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:-translate-y-1"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent text-background px-8 py-4 rounded-lg font-bold transition-all"
             >
               <Mail className="w-5 h-5" />
               Send an Email
-            </a>
-            <a 
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+              whileTap={{ scale: 0.95 }}
               href="https://github.com/securitygeek15" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-lg font-bold transition-all hover:-translate-y-1"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-lg font-bold transition-all"
             >
               <Github className="w-5 h-5" />
               GitHub
-            </a>
+            </motion.a>
           </div>
 
-          <div className="flex items-center justify-center gap-6">
-            <a href="#" className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="LinkedIn">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="#" className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="HackerOne">
-              <Bug className="w-5 h-5" />
-            </a>
-            <a href="#" className="p-3 bg-white/5 rounded-full text-gray-400 hover:text-accent hover:bg-white/10 transition-colors" aria-label="Twitter">
-              <Twitter className="w-5 h-5" />
-            </a>
+          <div className="contact-element flex items-center justify-center gap-6">
+            {[
+              { icon: Linkedin, label: 'LinkedIn', href: '#' },
+              { icon: Bug, label: 'HackerOne', href: '#' },
+              { icon: Twitter, label: 'Twitter', href: '#' }
+            ].map((social, idx) => (
+              <motion.a 
+                key={idx}
+                whileHover={{ scale: 1.2, rotate: 5, color: '#22C55E', backgroundColor: 'rgba(34,197,94,0.1)' }}
+                href={social.href} 
+                className="p-3 bg-white/5 border border-transparent hover:border-accent/30 rounded-full text-gray-400 transition-colors shadow-sm" 
+                aria-label={social.label}
+              >
+                <social.icon className="w-5 h-5" />
+              </motion.a>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
