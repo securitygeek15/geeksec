@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-gray-900 font-sans selection:bg-accent/30 selection:text-accent overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background font-sans text-gray-900 selection:bg-accent/30 selection:text-accent">
       <Navbar />
       
       <main>

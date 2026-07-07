@@ -134,7 +134,7 @@ const AIParticles: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none z-0"
+      className="pointer-events-none absolute inset-0 z-0"
       style={{ background: 'transparent' }}
     />
   );

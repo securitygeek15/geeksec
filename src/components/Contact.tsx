@@ -80,33 +80,33 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="py-24 relative bg-white/40 border-t border-gray-200 backdrop-blur-md" ref={containerRef}>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[150px] pointer-events-none"></div>
+    <section id="contact" className="relative border-t border-gray-200 bg-white/40 py-24 backdrop-blur-md" ref={containerRef}>
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-accent/5 blur-[150px]"></div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <div className="contact-header mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-sm">Get in Touch</h2>
-          <p className="text-gray-600 text-lg">Let's build something—responsibly.</p>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 drop-shadow-sm md:text-5xl">Get in Touch</h2>
+          <p className="text-lg text-gray-600">Let's build something—responsibly.</p>
         </div>
 
         <div
           ref={cardRef}
-          className="glass-card p-8 md:p-12 relative overflow-hidden shadow-xl border-gray-200"
+          className="glass-card relative overflow-hidden border-gray-200 p-8 shadow-xl md:p-12"
         >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent shadow-sm"></div>
+          <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-accent to-transparent shadow-sm"></div>
           
-          <p className="contact-element text-gray-600 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="contact-element mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-600">
             Whether you have a bug bounty program, a penetration testing engagement, an open-source collaboration, or simply want to discuss cybersecurity, I'd be happy to connect.
           </p>
 
-          <div className="contact-element flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="contact-element mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <motion.a 
               whileHover={{ scale: 1.05, boxShadow: "0 4px 20px rgba(79,70,229,0.4)" }}
               whileTap={{ scale: 0.95 }}
               href="mailto:amaankhan12e4@gmail.com" 
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-lg font-bold transition-all shadow-md"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-8 py-4 font-bold text-white shadow-md transition-all sm:w-auto"
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="size-5" />
               Send an Email
             </motion.a>
             <motion.a 
@@ -115,9 +115,9 @@ export default function Contact() {
               href="https://github.com/securitygeek15" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/80 border border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-bold transition-all shadow-sm"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white/80 px-8 py-4 font-bold text-gray-900 shadow-sm transition-all sm:w-auto"
             >
-              <Github className="w-5 h-5" />
+              <Github className="size-5" />
               GitHub
             </motion.a>
           </div>
@@ -132,10 +132,10 @@ export default function Contact() {
                 key={idx}
                 whileHover={{ scale: 1.2, rotate: 5, color: '#4F46E5', backgroundColor: 'rgba(79,70,229,0.1)' }}
                 href={social.href} 
-                className="p-3 bg-gray-50 border border-gray-200 hover:border-accent/30 rounded-full text-gray-500 transition-colors shadow-sm" 
+                className="rounded-full border border-gray-200 bg-gray-50 p-3 text-gray-500 shadow-sm transition-colors hover:border-accent/30" 
                 aria-label={social.label}
               >
-                <social.icon className="w-5 h-5" />
+                <social.icon className="size-5" />
               </motion.a>
             ))}
           </div>

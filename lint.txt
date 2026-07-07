@@ -1,0 +1,239 @@
+﻿
+> flowbite-react-template-vite@0.0.0 lint
+> eslint .
+
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\App.tsx
+  11:10  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\AIParticles.tsx
+  137:7  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\About.tsx
+   10:8   warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   10:8   warning  Classname 'transform' is not needed in Tailwind CSS v3!                tailwindcss/migration-from-tailwind-2
+   10:8   warning  Classname 'terminal-line' is not a Tailwind CSS class!                 tailwindcss/no-custom-classname
+   96:25  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   98:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   98:12  warning  Classnames 'w-64, h-64' could be replaced by the 'size-64' shorthand!  tailwindcss/enforces-shorthand
+   98:12  warning  Classname 'transform' is not needed in Tailwind CSS v3!                tailwindcss/migration-from-tailwind-2
+  100:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  101:14  warning  Classname 'about-header' is not a Tailwind CSS class!                  tailwindcss/no-custom-classname
+  102:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  103:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  106:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  107:33  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  108:17  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  122:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  124:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  124:23  warning  Classnames 'w-6, h-6' could be replaced by the 'size-6' shorthand!     tailwindcss/enforces-shorthand
+  126:21  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  128:25  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  128:25  warning  Classnames 'w-2, h-2' could be replaced by the 'size-2' shorthand!     tailwindcss/enforces-shorthand
+  135:34  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  135:34  warning  Classname 'perspective-1000' is not a Tailwind CSS class!              tailwindcss/no-custom-classname
+  136:18  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  137:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  137:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!     tailwindcss/enforces-shorthand
+  138:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  138:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!     tailwindcss/enforces-shorthand
+  139:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  139:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!     tailwindcss/enforces-shorthand
+  140:21  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  143:18  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  145:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  152:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  159:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  172:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  183:23  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  183:72  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Contact.tsx
+   83:27  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   84:12  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   86:12  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   87:14  warning  Classname 'contact-header' is not a Tailwind CSS class!             tailwindcss/no-custom-classname
+   88:15  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   89:14  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   94:11  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   96:16  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   98:14  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+   98:14  warning  Classname 'contact-element' is not a Tailwind CSS class!            tailwindcss/no-custom-classname
+  102:16  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  102:16  warning  Classname 'contact-element' is not a Tailwind CSS class!            tailwindcss/no-custom-classname
+  107:15  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  109:21  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  109:21  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!  tailwindcss/enforces-shorthand
+  118:15  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  120:23  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  120:23  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!  tailwindcss/enforces-shorthand
+  125:16  warning  Classname 'contact-element' is not a Tailwind CSS class!            tailwindcss/no-custom-classname
+  135:17  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  138:30  warning  Invalid Tailwind CSS classnames order                               tailwindcss/classnames-order
+  138:30  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!  tailwindcss/enforces-shorthand
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Footer.tsx
+   5:13  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+   7:12  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+   9:12  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  10:14  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  12:16  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  16:16  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  19:19  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  22:16  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  24:19  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  25:19  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+  26:19  warning  Invalid Tailwind CSS classnames order  tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Hero.tsx
+   19:5   error    'timeoutId' is never reassigned. Use 'const' instead                                           prefer-const
+   40:26  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   47:24  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   48:12  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   58:9   warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   58:9   warning  Classnames 'w-[300px], h-[300px]' could be replaced by the 'size-[300px]' shorthand!           tailwindcss/enforces-shorthand
+   58:9   warning  Classnames 'md:w-[600px], md:h-[600px]' could be replaced by the 'md:size-[600px]' shorthand!  tailwindcss/enforces-shorthand
+   61:12  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   72:13  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   74:19  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   74:19  warning  Classnames 'w-2, h-2' could be replaced by the 'size-2' shorthand!                             tailwindcss/enforces-shorthand
+   82:13  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+   90:13  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  101:13  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  106:16  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  118:17  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  121:22  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  130:13  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  136:15  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  138:27  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  138:27  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!                             tailwindcss/enforces-shorthand
+  147:15  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  149:23  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  149:23  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!                             tailwindcss/enforces-shorthand
+  159:11  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  159:11  warning  Classname 'perspective-1000' is not a Tailwind CSS class!                                      tailwindcss/no-custom-classname
+  161:16  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  162:18  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  163:20  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  163:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!                             tailwindcss/enforces-shorthand
+  164:20  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  164:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!                             tailwindcss/enforces-shorthand
+  165:20  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  165:20  warning  Classnames 'w-3, h-3' could be replaced by the 'size-3' shorthand!                             tailwindcss/enforces-shorthand
+  166:21  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  168:18  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  170:23  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  177:17  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  187:23  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  195:17  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  207:23  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+  208:23  warning  Invalid Tailwind CSS classnames order                                                          tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Nav.tsx
+   41:7   warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   41:7   warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   41:7   warning  Classnames 'left-0, right-0' could be replaced by the 'inset-x-0' shorthand!  tailwindcss/enforces-shorthand
+   41:7   warning  Classname 'bg-cyber-dark/85' is not a Tailwind CSS class!                     tailwindcss/no-custom-classname
+   47:12  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   50:11  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   56:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   56:15  warning  Classnames 'w-8, h-8' could be replaced by the 'size-8' shorthand!            tailwindcss/enforces-shorthand
+   56:15  warning  Classnames 'md:w-9, md:h-9' could be replaced by the 'md:size-9' shorthand!   tailwindcss/enforces-shorthand
+   58:19  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   58:19  warning  Classnames 'w-2.5, h-2.5' could be replaced by the 'size-2.5' shorthand!      tailwindcss/enforces-shorthand
+   58:19  warning  Classname 'ring-cyber-dark' is not a Tailwind CSS class!                      tailwindcss/no-custom-classname
+   60:17  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   65:14  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   70:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   78:23  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   78:23  warning  Classnames 'left-4, right-4' could be replaced by the 'inset-x-4' shorthand!  tailwindcss/enforces-shorthand
+   87:13  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   87:13  warning  Classname 'text-cyber-dark' is not a Tailwind CSS class!                      tailwindcss/no-custom-classname
+   89:18  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   89:18  warning  Classnames 'w-4, h-4' could be replaced by the 'size-4' shorthand!            tailwindcss/enforces-shorthand
+   97:13  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+   97:13  warning  Classnames 'w-9, h-9' could be replaced by the 'size-9' shorthand!            tailwindcss/enforces-shorthand
+  100:18  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  101:21  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  103:21  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  110:9   warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  110:9   warning  Classname 'duration-400' is not a Tailwind CSS class!                         tailwindcss/no-custom-classname
+  114:14  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  114:14  warning  Classname 'bg-cyber-dark/95' is not a Tailwind CSS class!                     tailwindcss/no-custom-classname
+  119:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  119:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  119:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  125:46  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  131:13  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  131:13  warning  Classname 'text-cyber-dark' is not a Tailwind CSS class!                      tailwindcss/no-custom-classname
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Navbar.tsx
+  29:7   warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  29:7   warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  29:7   warning  Classnames 'left-0, right-0' could be replaced by the 'inset-x-0' shorthand!  tailwindcss/enforces-shorthand
+  33:12  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  34:25  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  35:21  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  35:21  warning  Classnames 'w-6, h-6' could be replaced by the 'size-6' shorthand!            tailwindcss/enforces-shorthand
+  36:17  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  40:14  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  45:15  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  54:11  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  57:34  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  57:34  warning  Classnames 'w-6, h-6' could be replaced by the 'size-6' shorthand!            tailwindcss/enforces-shorthand
+  57:65  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  57:65  warning  Classnames 'w-6, h-6' could be replaced by the 'size-6' shorthand!            tailwindcss/enforces-shorthand
+  68:13  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  70:18  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+  76:19  warning  Invalid Tailwind CSS classnames order                                         tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Projects.tsx
+   83:28  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   84:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   86:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   87:14  warning  Classname 'project-header' is not a Tailwind CSS class!                tailwindcss/no-custom-classname
+   88:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   89:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   92:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+   92:14  warning  Classname 'perspective-1000' is not a Tailwind CSS class!              tailwindcss/no-custom-classname
+  102:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  102:15  warning  Classname 'transform-style-3d' is not a Tailwind CSS class!            tailwindcss/no-custom-classname
+  105:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  107:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  107:20  warning  Classname 'transform-style-3d' is not a Tailwind CSS class!            tailwindcss/no-custom-classname
+  107:20  warning  Classname 'translate-z-10' is not a Tailwind CSS class!                tailwindcss/no-custom-classname
+  108:22  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  109:25  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  112:27  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  112:27  warning  Classnames 'w-5, h-5' could be replaced by the 'size-5' shorthand!     tailwindcss/enforces-shorthand
+  115:21  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  117:33  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  117:33  warning  Classnames 'w-4, h-4' could be replaced by the 'size-4' shorthand!     tailwindcss/enforces-shorthand
+  120:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  120:20  warning  Classname 'flex-grow' should be updated to 'grow' in Tailwind CSS v3!  tailwindcss/migration-from-tailwind-2
+  124:22  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  125:25  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  125:25  warning  Classnames 'w-2, h-2' could be replaced by the 'size-2' shorthand!     tailwindcss/enforces-shorthand
+  126:25  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+
+C:\Users\amaan\OneDrive\Desktop\portfolio\src\components\Skills.tsx
+  101:26  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  103:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  103:12  warning  Classnames 'w-96, h-96' could be replaced by the 'size-96' shorthand!  tailwindcss/enforces-shorthand
+  103:12  warning  Classname 'transform' is not needed in Tailwind CSS v3!                tailwindcss/migration-from-tailwind-2
+  105:12  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  106:14  warning  Classname 'skills-header' is not a Tailwind CSS class!                 tailwindcss/no-custom-classname
+  107:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  108:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  111:14  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  116:15  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  118:20  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  119:22  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  120:34  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  120:34  warning  Classnames 'w-6, h-6' could be replaced by the 'size-6' shorthand!     tailwindcss/enforces-shorthand
+  130:21  warning  Invalid Tailwind CSS classnames order                                  tailwindcss/classnames-order
+  130:21  warning  Classname 'skill-badge' is not a Tailwind CSS class!                   tailwindcss/no-custom-classname
+
+Γ£û 211 problems (1 error, 210 warnings)
+  0 errors and 189 warnings potentially fixable with the `--fix` option.
+

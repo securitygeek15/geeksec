@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TerminalLine = ({ delay, children, className }: { delay: number, children: React.ReactNode, className?: string }) => (
-  <div className={`terminal-line opacity-0 transform translate-y-4 ${className || ''}`} data-delay={delay}>
+  <div className={`terminal-line translate-y-4 opacity-0${className || ''}`} data-delay={delay}>
     {children}
   </div>
 );
@@ -93,19 +93,19 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-24 relative" ref={containerRef}>
+    <section id="about" className="relative py-24" ref={containerRef}>
       {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-accent/5 rounded-full blur-[100px] pointer-events-none transform -translate-y-1/2"></div>
+      <div className="pointer-events-none absolute left-0 top-1/2 size-64 -translate-y-1/2 rounded-full bg-accent/5 blur-[100px]"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="about-header mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Behind the Terminal</h2>
-          <p className="text-gray-600 text-lg">The person behind the pseudonym.</p>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-5xl">Behind the Terminal</h2>
+          <p className="text-lg text-gray-600">The person behind the pseudonym.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div ref={contentRef} className="space-y-6 text-gray-600 text-lg leading-relaxed">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Hey, I'm GeekSec.</h3>
+        <div className="grid items-start gap-12 lg:grid-cols-2">
+          <div ref={contentRef} className="space-y-6 text-lg leading-relaxed text-gray-600">
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">Hey, I'm GeekSec.</h3>
             
             <p>
               I've been writing Python since 10th grade and gradually transitioned into offensive security. Today my primary interests are penetration testing, bug bounty hunting, and building open-source security tools.
@@ -119,44 +119,44 @@ export default function About() {
 
             <motion.div 
               whileHover={{ x: 5, backgroundColor: 'rgba(0,0,0,0.02)' }}
-              className="mt-8 glass-card p-6 border-l-4 border-l-accent flex gap-4 items-start transition-all cursor-default shadow-sm"
+              className="glass-card mt-8 flex cursor-default items-start gap-4 border-l-4 border-l-accent p-6 shadow-sm transition-all"
             >
-              <Target className="w-6 h-6 text-accent shrink-0 mt-1" />
+              <Target className="mt-1 size-6 shrink-0 text-accent" />
               <div>
-                <h4 className="text-gray-900 font-bold mb-2 flex items-center gap-2">
+                <h4 className="mb-2 flex items-center gap-2 font-bold text-gray-900">
                   Current Mission
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
+                  <span className="size-2 animate-pulse rounded-full bg-accent shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
                 </h4>
                 <p className="text-sm text-gray-600">Finding vulnerabilities, building defenses, and securing the web—one bug at a time.</p>
               </div>
             </motion.div>
           </div>
 
-          <div ref={terminalRef} className="glass-card overflow-hidden shadow-xl border-gray-200 perspective-1000 bg-white/95">
-            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-400"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              <span className="text-xs text-gray-500 ml-2 font-mono flex-1 pr-14 text-center">geeksec@portfolio:~$</span>
+          <div ref={terminalRef} className="glass-card perspective-1000 overflow-hidden border-gray-200 bg-white/95 shadow-xl">
+            <div className="flex items-center gap-2 border-b border-gray-200 bg-gray-50 px-4 py-3">
+              <div className="size-3 rounded-full bg-red-400"></div>
+              <div className="size-3 rounded-full bg-yellow-400"></div>
+              <div className="size-3 rounded-full bg-green-400"></div>
+              <span className="ml-2 flex-1 pr-14 text-center font-mono text-xs text-gray-500">geeksec@portfolio:~$</span>
             </div>
             
-            <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm space-y-4 overflow-x-auto whitespace-pre-wrap">
+            <div className="space-y-4 overflow-x-auto whitespace-pre-wrap p-4 font-mono text-xs sm:p-6 sm:text-sm">
               <TerminalLine delay={0.2}>
-                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">cat /etc/passwd | grep geeksec</span>
+                <span className="font-bold text-accent">❯</span> <span className="text-gray-800">cat /etc/passwd | grep geeksec</span>
               </TerminalLine>
               <TerminalLine delay={0.4}>
                 <span className="text-gray-600">geeksec:x:1000:1000::/home/geeksec:/bin/bash</span>
               </TerminalLine>
 
               <TerminalLine delay={1.2}>
-                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">uname -a</span>
+                <span className="font-bold text-accent">❯</span> <span className="text-gray-800">uname -a</span>
               </TerminalLine>
               <TerminalLine delay={1.4}>
                 <span className="text-gray-600">Linux hackerbox 6.8.0 x86_64 GNU/Linux</span>
               </TerminalLine>
 
               <TerminalLine delay={2.2}>
-                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">./skills --list</span>
+                <span className="font-bold text-accent">❯</span> <span className="text-gray-800">./skills --list</span>
               </TerminalLine>
               <TerminalLine delay={2.4}>
                 <span className="text-gray-600">
@@ -169,7 +169,7 @@ export default function About() {
               </TerminalLine>
 
               <TerminalLine delay={3.5}>
-                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">echo $STATUS</span>
+                <span className="font-bold text-accent">❯</span> <span className="text-gray-800">echo $STATUS</span>
               </TerminalLine>
               <TerminalLine delay={3.7}>
                 <span className="text-gray-600">
@@ -180,7 +180,7 @@ export default function About() {
               </TerminalLine>
 
               <TerminalLine delay={4.5}>
-                <span className="text-accent font-bold">❯</span> <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-gray-400 animate-pulse align-middle"></span>
+                <span className="font-bold text-accent">❯</span> <span className="inline-block h-3 w-2 animate-pulse bg-gray-400 align-middle sm:h-4 sm:w-2.5"></span>
               </TerminalLine>
             </div>
           </div>

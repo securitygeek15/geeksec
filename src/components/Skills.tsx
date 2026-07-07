@@ -98,26 +98,26 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="py-24 relative bg-white/40 backdrop-blur-sm border-y border-gray-200" ref={containerRef}>
+    <section id="skills" className="relative border-y border-gray-200 bg-white/40 py-24 backdrop-blur-sm" ref={containerRef}>
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+      <div className="pointer-events-none absolute right-0 top-0 size-96 -translate-y-1/2 translate-x-1/2 rounded-full bg-accent/5 blur-[120px]"></div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="skills-header mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-sm">The Arsenal</h2>
-          <p className="text-gray-600 text-lg">Technologies and tools I work with daily.</p>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 drop-shadow-sm md:text-5xl">The Arsenal</h2>
+          <p className="text-lg text-gray-600">Technologies and tools I work with daily.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           {skillCategories.map((category, i) => (
             <div
               key={category.title}
               ref={(el) => (categoriesRef.current[i] = el)}
-              className="glass-card p-6 md:p-8 border-t-2 border-t-accent/50 shadow-md hover:shadow-xl transition-shadow duration-500"
+              className="glass-card border-t-2 border-t-accent/50 p-6 shadow-md transition-shadow duration-500 hover:shadow-xl md:p-8"
             >
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-                <div className="p-2 bg-accent/5 rounded-lg border border-accent/10">
-                  <category.icon className="w-6 h-6 text-accent" />
+              <div className="mb-6 flex items-center gap-3 border-b border-gray-100 pb-4">
+                <div className="rounded-lg border border-accent/10 bg-accent/5 p-2">
+                  <category.icon className="size-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
               </div>
@@ -127,7 +127,7 @@ export default function Skills() {
                   <motion.span
                     key={skill}
                     whileHover={{ scale: 1.1, backgroundColor: 'rgba(79,70,229,0.1)', borderColor: 'rgba(79,70,229,0.3)', color: '#111827' }}
-                    className="skill-badge px-3 py-1.5 text-sm bg-gray-50 border border-gray-200 text-gray-700 transition-colors rounded-lg cursor-default shadow-sm"
+                    className="skill-badge cursor-default rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm text-gray-700 shadow-sm transition-colors"
                   >
                     {skill}
                   </motion.span>

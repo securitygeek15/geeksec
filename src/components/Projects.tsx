@@ -80,16 +80,16 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 relative" ref={containerRef}>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none blur-3xl opacity-50"></div>
+    <section id="projects" className="relative py-24" ref={containerRef}>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent opacity-50 blur-3xl"></div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="project-header mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Open Source Work</h2>
-          <p className="text-gray-600 text-lg">Security tools I've built and actively maintain.</p>
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-5xl">Open Source Work</h2>
+          <p className="text-lg text-gray-600">Security tools I've built and actively maintain.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 perspective-1000">
+        <div className="perspective-1000 grid gap-6 md:grid-cols-2">
           {projects.map((project, i) => (
             <motion.a
               href={project.url}
@@ -99,31 +99,31 @@ export default function Projects() {
               ref={(el) => (cardsRef.current[i] = el)}
               whileHover={{ scale: 1.02, rotateY: 2, rotateX: -2, z: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="glass-card p-6 md:p-8 group block relative overflow-hidden transform-style-3d cursor-pointer shadow-sm hover:shadow-[0_8px_30px_rgba(79,70,229,0.15)] border border-gray-200 hover:border-accent/30 transition-all"
+              className="glass-card transform-style-3d group relative block cursor-pointer overflow-hidden border border-gray-200 p-6 shadow-sm transition-all hover:border-accent/30 hover:shadow-[0_8px_30px_rgba(79,70,229,0.15)] md:p-8"
             >
               {/* Subtle gradient glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 transition-all duration-500 group-hover:from-accent/5 group-hover:to-transparent"></div>
               
-              <div className="relative z-10 flex flex-col h-full transform-style-3d translate-z-10">
-                <div className="flex justify-between items-start mb-6">
-                  <span className="text-xs font-mono text-accent bg-accent/5 px-3 py-1 rounded-full border border-accent/10 shadow-sm">
+              <div className="transform-style-3d translate-z-10 relative z-10 flex h-full flex-col">
+                <div className="mb-6 flex items-start justify-between">
+                  <span className="rounded-full border border-accent/10 bg-accent/5 px-3 py-1 font-mono text-xs text-accent shadow-sm">
                     {project.category}
                   </span>
-                  <Github className="w-5 h-5 text-gray-400 group-hover:text-gray-900 transition-colors" />
+                  <Github className="size-5 text-gray-400 transition-colors group-hover:text-gray-900" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors flex items-center gap-2">
+                <h3 className="mb-3 flex items-center gap-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-accent">
                   {project.name}
-                  <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                  <ExternalLink className="size-4 -translate-x-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </h3>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
+                <p className="mb-8 grow text-sm leading-relaxed text-gray-600">
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-2 mt-auto">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
-                  <span className="text-xs text-gray-500 group-hover:text-gray-700 uppercase tracking-wider font-medium transition-colors">
+                <div className="mt-auto flex items-center gap-2">
+                  <span className="size-2 animate-pulse rounded-full bg-accent shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
+                  <span className="text-xs font-medium uppercase tracking-wider text-gray-500 transition-colors group-hover:text-gray-700">
                     Active Development
                   </span>
                 </div>
