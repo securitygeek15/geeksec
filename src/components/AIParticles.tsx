@@ -58,7 +58,7 @@ const AIParticles: React.FC = () => {
 
           if (distance < 120) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(34, 197, 94, ${0.2 - distance / 600})`;
+            ctx.strokeStyle = `rgba(79, 70, 229, ${0.2 - distance / 600})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -73,7 +73,7 @@ const AIParticles: React.FC = () => {
 
         if (distanceMouse < 150) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(34, 197, 94, ${0.4 - distanceMouse / 375})`;
+          ctx.strokeStyle = `rgba(79, 70, 229, ${0.4 - distanceMouse / 375})`;
           ctx.lineWidth = 1;
           ctx.moveTo(particles.current[i].x, particles.current[i].y);
           ctx.lineTo(mouse.current.x, mouse.current.y);
@@ -98,7 +98,7 @@ const AIParticles: React.FC = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(34, 197, 94, 0.5)';
+        ctx.fillStyle = 'rgba(79, 70, 229, 0.5)';
         ctx.fill();
       });
 

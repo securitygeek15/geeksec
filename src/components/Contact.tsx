@@ -80,42 +80,42 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="py-24 relative bg-black/60 border-t border-white/5 backdrop-blur-md" ref={containerRef}>
+    <section id="contact" className="py-24 relative bg-white/40 border-t border-gray-200 backdrop-blur-md" ref={containerRef}>
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <div className="contact-header mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">Get in Touch</h2>
-          <p className="text-gray-400 text-lg">Let's build something—responsibly.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 drop-shadow-sm">Get in Touch</h2>
+          <p className="text-gray-600 text-lg">Let's build something—responsibly.</p>
         </div>
 
         <div
           ref={cardRef}
-          className="glass-card p-8 md:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(34,197,94,0.05)] border-accent/20"
+          className="glass-card p-8 md:p-12 relative overflow-hidden shadow-xl border-gray-200"
         >
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent shadow-[0_0_15px_rgba(34,197,94,0.8)]"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent shadow-sm"></div>
           
-          <p className="contact-element text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="contact-element text-gray-600 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
             Whether you have a bug bounty program, a penetration testing engagement, an open-source collaboration, or simply want to discuss cybersecurity, I'd be happy to connect.
           </p>
 
           <div className="contact-element flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <motion.a 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34,197,94,0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 4px 20px rgba(79,70,229,0.4)" }}
               whileTap={{ scale: 0.95 }}
               href="mailto:amaankhan12e4@gmail.com" 
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent text-background px-8 py-4 rounded-lg font-bold transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-lg font-bold transition-all shadow-md"
             >
               <Mail className="w-5 h-5" />
               Send an Email
             </motion.a>
             <motion.a 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.05)" }}
               whileTap={{ scale: 0.95 }}
               href="https://github.com/securitygeek15" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-lg font-bold transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/80 border border-gray-200 text-gray-900 px-8 py-4 rounded-lg font-bold transition-all shadow-sm"
             >
               <Github className="w-5 h-5" />
               GitHub
@@ -130,9 +130,9 @@ export default function Contact() {
             ].map((social, idx) => (
               <motion.a 
                 key={idx}
-                whileHover={{ scale: 1.2, rotate: 5, color: '#22C55E', backgroundColor: 'rgba(34,197,94,0.1)' }}
+                whileHover={{ scale: 1.2, rotate: 5, color: '#4F46E5', backgroundColor: 'rgba(79,70,229,0.1)' }}
                 href={social.href} 
-                className="p-3 bg-white/5 border border-transparent hover:border-accent/30 rounded-full text-gray-400 transition-colors shadow-sm" 
+                className="p-3 bg-gray-50 border border-gray-200 hover:border-accent/30 rounded-full text-gray-500 transition-colors shadow-sm" 
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />

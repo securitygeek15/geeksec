@@ -85,8 +85,8 @@ export default function Projects() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="project-header mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Open Source Work</h2>
-          <p className="text-gray-400 text-lg">Security tools I've built and actively maintain.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Open Source Work</h2>
+          <p className="text-gray-600 text-lg">Security tools I've built and actively maintain.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 perspective-1000">
@@ -99,31 +99,31 @@ export default function Projects() {
               ref={(el) => (cardsRef.current[i] = el)}
               whileHover={{ scale: 1.02, rotateY: 2, rotateX: -2, z: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="glass-card p-6 md:p-8 group block relative overflow-hidden transform-style-3d cursor-pointer shadow-lg hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] border border-white/5 hover:border-accent/30 transition-colors"
+              className="glass-card p-6 md:p-8 group block relative overflow-hidden transform-style-3d cursor-pointer shadow-sm hover:shadow-[0_8px_30px_rgba(79,70,229,0.15)] border border-gray-200 hover:border-accent/30 transition-all"
             >
               {/* Subtle gradient glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/10 group-hover:to-transparent transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all duration-500"></div>
               
               <div className="relative z-10 flex flex-col h-full transform-style-3d translate-z-10">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                  <span className="text-xs font-mono text-accent bg-accent/5 px-3 py-1 rounded-full border border-accent/10 shadow-sm">
                     {project.category}
                   </span>
-                  <Github className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
+                  <Github className="w-5 h-5 text-gray-400 group-hover:text-gray-900 transition-colors" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors flex items-center gap-2 drop-shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors flex items-center gap-2">
                   {project.name}
                   <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </h3>
                 
-                <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
+                <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">
                   {project.description}
                 </p>
 
                 <div className="flex items-center gap-2 mt-auto">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
-                  <span className="text-xs text-gray-500 group-hover:text-gray-300 uppercase tracking-wider font-medium transition-colors">
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
+                  <span className="text-xs text-gray-500 group-hover:text-gray-700 uppercase tracking-wider font-medium transition-colors">
                     Active Development
                   </span>
                 </div>

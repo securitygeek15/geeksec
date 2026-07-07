@@ -99,13 +99,13 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="about-header mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Behind the Terminal</h2>
-          <p className="text-gray-400 text-lg">The person behind the pseudonym.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Behind the Terminal</h2>
+          <p className="text-gray-600 text-lg">The person behind the pseudonym.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div ref={contentRef} className="space-y-6 text-gray-400 text-lg leading-relaxed">
-            <h3 className="text-2xl font-bold text-white mb-6">Hey, I'm GeekSec.</h3>
+          <div ref={contentRef} className="space-y-6 text-gray-600 text-lg leading-relaxed">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Hey, I'm GeekSec.</h3>
             
             <p>
               I've been writing Python since 10th grade and gradually transitioned into offensive security. Today my primary interests are penetration testing, bug bounty hunting, and building open-source security tools.
@@ -118,61 +118,61 @@ export default function About() {
             </p>
 
             <motion.div 
-              whileHover={{ x: 5, backgroundColor: 'rgba(255,255,255,0.05)' }}
-              className="mt-8 glass-card p-6 border-l-4 border-l-accent flex gap-4 items-start transition-all cursor-default"
+              whileHover={{ x: 5, backgroundColor: 'rgba(0,0,0,0.02)' }}
+              className="mt-8 glass-card p-6 border-l-4 border-l-accent flex gap-4 items-start transition-all cursor-default shadow-sm"
             >
-              <Target className="w-6 h-6 text-accent shrink-0 mt-1 drop-shadow-[0_0_5px_rgba(34,197,94,0.5)]" />
+              <Target className="w-6 h-6 text-accent shrink-0 mt-1" />
               <div>
-                <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                <h4 className="text-gray-900 font-bold mb-2 flex items-center gap-2">
                   Current Mission
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(79,70,229,0.5)]"></span>
                 </h4>
-                <p className="text-sm text-gray-300">Finding vulnerabilities, building defenses, and securing the web—one bug at a time.</p>
+                <p className="text-sm text-gray-600">Finding vulnerabilities, building defenses, and securing the web—one bug at a time.</p>
               </div>
             </motion.div>
           </div>
 
-          <div ref={terminalRef} className="glass-card overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.1)] border-accent/20 perspective-1000">
-            <div className="bg-white/5 px-4 py-3 border-b border-white/5 flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_5px_rgba(239,68,68,0.5)]"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_5px_rgba(234,179,8,0.5)]"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_5px_rgba(34,197,94,0.5)]"></div>
-              <span className="text-xs text-gray-500 ml-2 font-mono">geeksec@portfolio:~$</span>
+          <div ref={terminalRef} className="glass-card overflow-hidden shadow-xl border-gray-200 perspective-1000 bg-white/95">
+            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-400"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              <span className="text-xs text-gray-500 ml-2 font-mono flex-1 pr-14 text-center">geeksec@portfolio:~$</span>
             </div>
             
             <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm space-y-4 overflow-x-auto whitespace-pre-wrap">
               <TerminalLine delay={0.2}>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">❯</span> cat /etc/passwd | grep geeksec
+                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">cat /etc/passwd | grep geeksec</span>
               </TerminalLine>
               <TerminalLine delay={0.4}>
-                <span className="text-gray-300">geeksec:x:1000:1000::/home/geeksec:/bin/bash</span>
+                <span className="text-gray-600">geeksec:x:1000:1000::/home/geeksec:/bin/bash</span>
               </TerminalLine>
 
               <TerminalLine delay={1.2}>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">❯</span> uname -a
+                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">uname -a</span>
               </TerminalLine>
               <TerminalLine delay={1.4}>
-                <span className="text-gray-300">Linux hackerbox 6.8.0 x86_64 GNU/Linux</span>
+                <span className="text-gray-600">Linux hackerbox 6.8.0 x86_64 GNU/Linux</span>
               </TerminalLine>
 
               <TerminalLine delay={2.2}>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">❯</span> ./skills --list
+                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">./skills --list</span>
               </TerminalLine>
               <TerminalLine delay={2.4}>
-                <span className="text-gray-400">
-                  <span className="text-accent drop-shadow-[0_0_2px_rgba(34,197,94,0.5)]">[+]</span> Python<br/>
-                  <span className="text-accent drop-shadow-[0_0_2px_rgba(34,197,94,0.5)]">[+]</span> Web Pentesting<br/>
-                  <span className="text-accent drop-shadow-[0_0_2px_rgba(34,197,94,0.5)]">[+]</span> Network Analysis<br/>
-                  <span className="text-accent drop-shadow-[0_0_2px_rgba(34,197,94,0.5)]">[+]</span> Reverse Engineering<br/>
-                  <span className="text-accent drop-shadow-[0_0_2px_rgba(34,197,94,0.5)]">[+]</span> Bug Bounty Hunting
+                <span className="text-gray-600">
+                  <span className="text-accent">[+]</span> Python<br/>
+                  <span className="text-accent">[+]</span> Web Pentesting<br/>
+                  <span className="text-accent">[+]</span> Network Analysis<br/>
+                  <span className="text-accent">[+]</span> Reverse Engineering<br/>
+                  <span className="text-accent">[+]</span> Bug Bounty Hunting
                 </span>
               </TerminalLine>
 
               <TerminalLine delay={3.5}>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">❯</span> echo $STATUS
+                <span className="text-accent font-bold">❯</span> <span className="text-gray-800">echo $STATUS</span>
               </TerminalLine>
               <TerminalLine delay={3.7}>
-                <span className="text-gray-300">
+                <span className="text-gray-600">
                   Building tools.<br/>
                   Finding bugs.<br/>
                   Breaking things (legally).
@@ -180,7 +180,7 @@ export default function About() {
               </TerminalLine>
 
               <TerminalLine delay={4.5}>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">❯</span> <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-accent shadow-[0_0_8px_rgba(34,197,94,0.8)] animate-pulse align-middle"></span>
+                <span className="text-accent font-bold">❯</span> <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-gray-400 animate-pulse align-middle"></span>
               </TerminalLine>
             </div>
           </div>

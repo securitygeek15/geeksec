@@ -37,7 +37,7 @@ const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) =
   return (
     <span>
       {displayText}
-      {isTyping && <span className="inline-block w-2 h-4 bg-accent ml-1 animate-pulse" />}
+      {isTyping && <span className="inline-block w-2 h-4 bg-gray-400 ml-1 animate-pulse" />}
     </span>
   );
 };
@@ -69,17 +69,17 @@ export default function Hero() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-gray-200 mb-6 backdrop-blur-md shadow-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_#22C55E]"></span>
-            <span className="text-xs font-medium text-gray-300">Open for opportunities</span>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_rgba(79,70,229,0.5)]"></span>
+            <span className="text-xs font-medium text-gray-700">Open for opportunities</span>
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight drop-shadow-2xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 tracking-tight drop-shadow-sm"
           >
             GeekSec
           </motion.h1>
@@ -87,9 +87,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-3xl text-gray-400 font-medium mb-6"
+            className="text-xl sm:text-2xl md:text-3xl text-gray-600 font-medium mb-6"
           >
-            <span className="text-accent drop-shadow-[0_0_8px_rgba(34,197,94,0.4)]">Ethical Hacker</span> <br className="md:hidden" />
+            <span className="text-accent drop-shadow-sm">Ethical Hacker</span> <br className="md:hidden" />
             <span className="hidden md:inline"> • </span> 
             Penetration Tester • Bug Bounty Hunter
           </motion.h2>
@@ -98,7 +98,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-gray-400 text-base sm:text-lg mb-8 max-w-xl leading-relaxed"
+            className="text-gray-600 text-base sm:text-lg mb-8 max-w-xl leading-relaxed"
           >
             Building offensive security tools with Python, discovering vulnerabilities through responsible disclosure, and contributing to open-source cybersecurity.
           </motion.p>
@@ -113,7 +113,7 @@ export default function Hero() {
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05, borderColor: "rgba(34,197,94,0.3)" }}
+                whileHover={{ scale: 1.05, borderColor: "rgba(79,70,229,0.3)" }}
                 transition={{ delay: 0.6 + (i * 0.1), type: "spring", stiffness: 200 }}
                 className="glass-card px-5 py-3 min-w-[140px] cursor-pointer"
               >
@@ -130,21 +130,21 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
           >
             <motion.a 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34,197,94,0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 4px 20px rgba(79,70,229,0.4)" }}
               whileTap={{ scale: 0.95 }}
               href="#projects" 
-              className="flex items-center justify-center gap-2 bg-accent text-background px-6 py-3 rounded-lg font-semibold transition-all"
+              className="flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md"
             >
               <FolderCode className="w-5 h-5" />
               View Projects
             </motion.a>
             <motion.a 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.05)" }}
               whileTap={{ scale: 0.95 }}
               href="https://github.com/securitygeek15" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-6 py-3 rounded-lg font-semibold transition-all backdrop-blur-md"
+              className="flex items-center justify-center gap-2 bg-white/80 border border-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all backdrop-blur-md shadow-sm"
             >
               <Github className="w-5 h-5" />
               GitHub
@@ -158,23 +158,23 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
           className="relative lg:ml-auto w-full max-w-lg mt-8 lg:mt-0 perspective-1000"
         >
-          <div className="glass-card overflow-hidden border-accent/20 shadow-[0_0_40px_rgba(34,197,94,0.15)] backdrop-blur-xl">
-            <div className="bg-white/5 px-4 py-2 border-b border-white/5 flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[0_0_5px_rgba(239,68,68,0.5)]"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80 shadow-[0_0_5px_rgba(234,179,8,0.5)]"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[0_0_5px_rgba(34,197,94,0.5)]"></div>
-              <span className="text-xs text-gray-400 ml-2 font-mono">bash - 80x24</span>
+          <div className="glass-card overflow-hidden border-gray-200 shadow-xl backdrop-blur-xl bg-white/95">
+            <div className="bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-400"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div className="w-3 h-3 rounded-full bg-green-400"></div>
+              <span className="text-xs text-gray-500 ml-2 font-mono flex-1 text-center pr-8">bash - 80x24</span>
             </div>
-            <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm space-y-3 overflow-x-auto whitespace-pre-wrap">
+            <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm space-y-3 overflow-x-auto whitespace-pre-wrap text-gray-800">
               <div>
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">geeksec@portfolio:~$</span>{' '}
+                <span className="text-accent font-bold">geeksec@portfolio:~$</span>{' '}
                 <TypewriterText text="whoami" delay={1200} />
               </div>
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.8 }}
-                className="text-gray-300 font-bold"
+                className="text-gray-900 font-bold"
               >
                 GeekSec
               </motion.div>
@@ -184,7 +184,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.3 }}
               >
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">geeksec@portfolio:~$</span>{' '}
+                <span className="text-accent font-bold">geeksec@portfolio:~$</span>{' '}
                 <TypewriterText text="echo $MISSION" delay={2500} />
               </motion.div>
               
@@ -192,7 +192,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 3.6 }}
-                className="text-gray-300 space-y-1"
+                className="text-gray-700 space-y-1"
               >
                 <div>Finding vulnerabilities.</div>
                 <div>Building defenses.</div>
@@ -204,8 +204,8 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 4.0 }}
               >
-                <span className="text-accent font-bold drop-shadow-[0_0_2px_rgba(34,197,94,0.8)]">geeksec@portfolio:~$</span>{' '}
-                <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-accent animate-pulse align-middle ml-1 shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>
+                <span className="text-accent font-bold">geeksec@portfolio:~$</span>{' '}
+                <span className="inline-block w-2 sm:w-2.5 h-3 sm:h-4 bg-gray-400 animate-pulse align-middle ml-1"></span>
               </motion.div>
             </div>
           </div>

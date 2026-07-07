@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#09090B",
-        accent: "#22C55E",
+        background: "#FAFAFA",
+        accent: "#4F46E5", // Indigo accent
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
