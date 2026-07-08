@@ -14,7 +14,7 @@ const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) =
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    let typeInterval: NodeJS.Timeout;
+    let typeInterval: ReturnType<typeof setInterval>;
     const timeoutId = setTimeout(() => {
       setIsTyping(true);
       let i = 0;
