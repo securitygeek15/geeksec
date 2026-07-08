@@ -14,22 +14,26 @@ const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) =
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
+    let typeInterval: NodeJS.Timeout;
     const timeoutId = setTimeout(() => {
       setIsTyping(true);
       let i = 0;
-      const typeInterval = setInterval(() => {
+      typeInterval = setInterval(() => {
         if (i < text.length) {
-          setDisplayText((prev) => prev + text.charAt(i));
+          const char = text.charAt(i);
+          setDisplayText((prev) => prev + char);
           i++;
         } else {
           clearInterval(typeInterval);
           setIsTyping(false);
         }
       }, 50);
-      return () => clearInterval(typeInterval);
     }, delay);
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      clearTimeout(timeoutId);
+      if (typeInterval) clearInterval(typeInterval);
+    };
   }, [text, delay]);
 
   return (
