@@ -22,6 +22,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -31,7 +41,11 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <a href="#home" className="group flex items-center gap-2">
+        <a 
+          href="#home" 
+          onClick={(e) => handleNavClick(e, '#home')} 
+          className="group flex items-center gap-2"
+        >
           <Terminal className="size-6 text-accent transition-colors group-hover:text-accent/80" />
           <span className="text-xl font-bold tracking-tight text-gray-900">GeekSec</span>
         </a>
@@ -42,6 +56,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium text-gray-600 transition-colors hover:text-accent"
             >
               {link.name}
@@ -72,7 +87,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-lg font-medium text-gray-600 transition-colors hover:text-accent"
                 >
                   {link.name}
